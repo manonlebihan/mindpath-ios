@@ -18,20 +18,32 @@ struct EmotionListView: View {
             }
             .navigationTitle("Mes émotions")
             .toolbar {
-                Button("Déconnexion") {
-                    session.logout()
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Déconnexion") {
+                        session.logout()
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: AddEmotionView(onEmotionAdded: {
+                        reloadEmotions()
+                    })) {
+                        Image(systemName: "plus")
+                    }
                 }
             }
         }
-        .onAppear {
-            APIService.shared.fetchEmotions(token: session.token ?? "") { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let emotions):
-                        self.emotions = emotions
-                    case .failure:
-                        print("Erreur récupération émotions")
-                    }
+        .onAppear(perform: reloadEmotions)
+    }
+    
+    func reloadEmotions() {
+        APIService.shared.fetchEmotions(token: session.token ?? "") { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let emotions):
+                    self.emotions = emotions
+                case .failure:
+                    print("Erreur récupération émotions")
                 }
             }
         }

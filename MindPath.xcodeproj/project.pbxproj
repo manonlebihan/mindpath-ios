@@ -16,6 +16,7 @@
 		9E98D2652E16FA3D007CD442 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2642E16FA39007CD442 /* LoginView.swift */; };
 		9E98D2672E16FA55007CD442 /* EmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2662E16FA50007CD442 /* EmotionListView.swift */; };
 		9E98D26A2E16FA79007CD442 /* EmotionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2692E16FA75007CD442 /* EmotionRowView.swift */; };
+		9E98D26C2E170082007CD442 /* AddEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D26B2E17007E007CD442 /* AddEmotionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		9E98D2642E16FA39007CD442 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9E98D2662E16FA50007CD442 /* EmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionListView.swift; sourceTree = "<group>"; };
 		9E98D2692E16FA75007CD442 /* EmotionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRowView.swift; sourceTree = "<group>"; };
+		9E98D26B2E17007E007CD442 /* AddEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmotionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		9E98D25D2E16F9C6007CD442 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E98D26B2E17007E007CD442 /* AddEmotionView.swift */,
 				9E98D2692E16FA75007CD442 /* EmotionRowView.swift */,
 				9E98D2662E16FA50007CD442 /* EmotionListView.swift */,
 				9E98D2642E16FA39007CD442 /* LoginView.swift */,
@@ -178,6 +181,7 @@
 				9E98D26A2E16FA79007CD442 /* EmotionRowView.swift in Sources */,
 				9E98D2612E16FA18007CD442 /* Emotion.swift in Sources */,
 				9E98D2632E16FA2C007CD442 /* APIServices.swift in Sources */,
+				9E98D26C2E170082007CD442 /* AddEmotionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,4 +59,30 @@ class APIService {
             completion(.success(emotions))
         }.resume()
     }
+    
+    func createEmotion(note: String, token: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string: "\(baseURL)/emotions") else { return }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let payload: [String: Any] = [
+            "note": note,
+            "emotion": "",
+            "tag_ids": []  // tu pourras l’adapter plus tard
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: payload)
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            completion(.success(()))
+        }.resume()
+    }
 }
