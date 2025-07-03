@@ -14,46 +14,54 @@ struct LoginView: View {
     @State private var error: String?
 
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Connexion")
-                .font(.largeTitle)
-                .bold()
+        NavigationView {
+            VStack(spacing: 20) {
+                Text("Connexion")
+                    .font(.largeTitle)
+                    .bold()
 
-            TextField("Email", text: $email)
-                .textContentType(.emailAddress)
-                .autocapitalization(.none)
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(8)
+                TextField("Email", text: $email)
+                    .textContentType(.emailAddress)
+                    .autocapitalization(.none)
+                    .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
 
-            SecureField("Mot de passe", text: $password)
-                .padding()
-                .background(Color.gray.opacity(0.1))
-                .cornerRadius(8)
+                SecureField("Mot de passe", text: $password)
+                    .padding()
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
 
-            if let error = error {
-                Text(error)
-                    .foregroundColor(.red)
-            }
+                if let error = error {
+                    Text(error)
+                        .foregroundColor(.red)
+                }
 
-            Button("Se connecter") {
-                APIService.shared.login(email: email, password: password) { result in
-                    DispatchQueue.main.async {
-                        switch result {
-                        case .success(let token):
-                            session.token = token
-                        case .failure:
-                            error = "Échec de la connexion"
+                Button("Se connecter") {
+                    APIService.shared.login(email: email, password: password) { result in
+                        DispatchQueue.main.async {
+                            switch result {
+                            case .success(let token):
+                                session.token = token
+                            case .failure:
+                                error = "Échec de la connexion"
+                            }
                         }
                     }
                 }
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(8)
+                
+                NavigationLink("Créer un compte", destination: RegisterView())
+                    .padding(.top)
+                
+                Spacer()
             }
             .padding()
-            .frame(maxWidth: .infinity)
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
+            .navigationBarTitle("Connexion")
         }
-        .padding()
     }
 }

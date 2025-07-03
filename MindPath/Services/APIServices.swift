@@ -9,7 +9,28 @@ import Foundation
 
 class APIService {
     static let shared = APIService()
-    let baseURL = "http://localhost:8000"  // Change avec ngrok si besoin
+    let baseURL = "http://localhost:8000"
+    
+    func register(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
+        guard let url = URL(string: "\(baseURL)/register") else { return }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let payload = ["email": email, "password": password]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: payload)
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            // On essaye ensuite de se connecter automatiquement
+            self.login(email: email, password: password, completion: completion)
+        }.resume()
+    }
 
     func login(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)/login") else { return }
@@ -71,7 +92,7 @@ class APIService {
         let payload: [String: Any] = [
             "note": note,
             "emotion": "",
-            "tag_ids": []  // tu pourras l’adapter plus tard
+            "tag_ids": []
         ]
 
         request.httpBody = try? JSONSerialization.data(withJSONObject: payload)
