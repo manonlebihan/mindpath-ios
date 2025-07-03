@@ -6,17 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9E98D2582E16F9AB007CD442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E98D2542E16F9AB007CD442 /* Assets.xcassets */; };
+		9E98D2592E16F9AB007CD442 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2552E16F9AB007CD442 /* ContentView.swift */; };
+		9E98D25A2E16F9AB007CD442 /* MindPathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2562E16F9AB007CD442 /* MindPathApp.swift */; };
+		9E98D25F2E16FA0B007CD442 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D25E2E16FA05007CD442 /* UserSession.swift */; };
+		9E98D2612E16FA18007CD442 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2602E16FA15007CD442 /* Emotion.swift */; };
+		9E98D2632E16FA2C007CD442 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2622E16FA24007CD442 /* APIServices.swift */; };
+		9E98D2652E16FA3D007CD442 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2642E16FA39007CD442 /* LoginView.swift */; };
+		9E98D2672E16FA55007CD442 /* EmotionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2662E16FA50007CD442 /* EmotionListView.swift */; };
+		9E98D26A2E16FA79007CD442 /* EmotionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2692E16FA75007CD442 /* EmotionRowView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		9E98D2462E16F97E007CD442 /* MindPath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindPath.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E98D2542E16F9AB007CD442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9E98D2552E16F9AB007CD442 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9E98D2562E16F9AB007CD442 /* MindPathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindPathApp.swift; sourceTree = "<group>"; };
+		9E98D25E2E16FA05007CD442 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		9E98D2602E16FA15007CD442 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		9E98D2622E16FA24007CD442 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		9E98D2642E16FA39007CD442 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9E98D2662E16FA50007CD442 /* EmotionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionListView.swift; sourceTree = "<group>"; };
+		9E98D2692E16FA75007CD442 /* EmotionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		9E98D2482E16F97E007CD442 /* MindPath */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MindPath;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9E98D2432E16F97E007CD442 /* Frameworks */ = {
@@ -32,7 +45,7 @@
 		9E98D23D2E16F97E007CD442 = {
 			isa = PBXGroup;
 			children = (
-				9E98D2482E16F97E007CD442 /* MindPath */,
+				9E98D2572E16F9AB007CD442 /* MindPath */,
 				9E98D2472E16F97E007CD442 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +56,46 @@
 				9E98D2462E16F97E007CD442 /* MindPath.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9E98D2572E16F9AB007CD442 /* MindPath */ = {
+			isa = PBXGroup;
+			children = (
+				9E98D25B2E16F9B0007CD442 /* Models */,
+				9E98D25C2E16F9BC007CD442 /* Services */,
+				9E98D25D2E16F9C6007CD442 /* Views */,
+				9E98D2542E16F9AB007CD442 /* Assets.xcassets */,
+				9E98D2552E16F9AB007CD442 /* ContentView.swift */,
+				9E98D2562E16F9AB007CD442 /* MindPathApp.swift */,
+			);
+			path = MindPath;
+			sourceTree = "<group>";
+		};
+		9E98D25B2E16F9B0007CD442 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E98D2602E16FA15007CD442 /* Emotion.swift */,
+				9E98D25E2E16FA05007CD442 /* UserSession.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9E98D25C2E16F9BC007CD442 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9E98D2622E16FA24007CD442 /* APIServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9E98D25D2E16F9C6007CD442 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E98D2692E16FA75007CD442 /* EmotionRowView.swift */,
+				9E98D2662E16FA50007CD442 /* EmotionListView.swift */,
+				9E98D2642E16FA39007CD442 /* LoginView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +112,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				9E98D2482E16F97E007CD442 /* MindPath */,
 			);
 			name = MindPath;
 			packageProductDependencies = (
@@ -109,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E98D2582E16F9AB007CD442 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E98D2652E16FA3D007CD442 /* LoginView.swift in Sources */,
+				9E98D2672E16FA55007CD442 /* EmotionListView.swift in Sources */,
+				9E98D25F2E16FA0B007CD442 /* UserSession.swift in Sources */,
+				9E98D2592E16F9AB007CD442 /* ContentView.swift in Sources */,
+				9E98D25A2E16F9AB007CD442 /* MindPathApp.swift in Sources */,
+				9E98D26A2E16FA79007CD442 /* EmotionRowView.swift in Sources */,
+				9E98D2612E16FA18007CD442 /* Emotion.swift in Sources */,
+				9E98D2632E16FA2C007CD442 /* APIServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
