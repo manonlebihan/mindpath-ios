@@ -81,7 +81,7 @@ class APIService {
         }.resume()
     }
     
-    func createEmotion(note: String, token: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func createEmotion(note: String, emotion: String, token: String, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let url = URL(string: "\(baseURL)/emotions") else { return }
 
         var request = URLRequest(url: url)
@@ -91,7 +91,7 @@ class APIService {
 
         let payload: [String: Any] = [
             "note": note,
-            "emotion": "",
+            "emotion": emotion,
             "tag_ids": []
         ]
 
