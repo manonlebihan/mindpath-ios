@@ -14,7 +14,9 @@ struct EmotionListView: View {
     var body: some View {
         NavigationView {
             List(emotions) { emotion in
-                EmotionRowView(emotion: emotion)
+                NavigationLink(destination: EmotionDetailView(emotion: emotion)) {
+                    EmotionRowView(emotion: emotion)
+                }
             }
             .navigationTitle("Mes émotions")
             .toolbar {

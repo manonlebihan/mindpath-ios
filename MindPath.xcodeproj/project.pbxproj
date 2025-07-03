@@ -18,6 +18,7 @@
 		9E98D26A2E16FA79007CD442 /* EmotionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D2692E16FA75007CD442 /* EmotionRowView.swift */; };
 		9E98D26C2E170082007CD442 /* AddEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D26B2E17007E007CD442 /* AddEmotionView.swift */; };
 		9E98D26E2E1701D8007CD442 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D26D2E1701D3007CD442 /* RegisterView.swift */; };
+		9E98D2702E171EA3007CD442 /* EmotionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E98D26F2E171EA0007CD442 /* EmotionDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		9E98D2692E16FA75007CD442 /* EmotionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRowView.swift; sourceTree = "<group>"; };
 		9E98D26B2E17007E007CD442 /* AddEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmotionView.swift; sourceTree = "<group>"; };
 		9E98D26D2E1701D3007CD442 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		9E98D26F2E171EA0007CD442 /* EmotionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		9E98D25D2E16F9C6007CD442 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9E98D26F2E171EA0007CD442 /* EmotionDetailView.swift */,
 				9E98D26D2E1701D3007CD442 /* RegisterView.swift */,
 				9E98D26B2E17007E007CD442 /* AddEmotionView.swift */,
 				9E98D2692E16FA75007CD442 /* EmotionRowView.swift */,
@@ -184,6 +187,7 @@
 				9E98D25A2E16F9AB007CD442 /* MindPathApp.swift in Sources */,
 				9E98D26A2E16FA79007CD442 /* EmotionRowView.swift in Sources */,
 				9E98D2612E16FA18007CD442 /* Emotion.swift in Sources */,
+				9E98D2702E171EA3007CD442 /* EmotionDetailView.swift in Sources */,
 				9E98D2632E16FA2C007CD442 /* APIServices.swift in Sources */,
 				9E98D26C2E170082007CD442 /* AddEmotionView.swift in Sources */,
 			);
