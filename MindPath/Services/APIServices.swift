@@ -27,7 +27,6 @@ class APIService {
                 return
             }
 
-            // On essaye ensuite de se connecter automatiquement
             self.login(email: email, password: password, completion: completion)
         }.resume()
     }
@@ -104,6 +103,22 @@ class APIService {
             }
 
             completion(.success(()))
+        }.resume()
+    }
+    
+    func deleteEmotion(id: Int, token: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let url = URL(string: "\(baseURL)/emotions/\(id)") else { return }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
         }.resume()
     }
 }

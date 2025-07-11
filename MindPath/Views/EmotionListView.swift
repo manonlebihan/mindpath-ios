@@ -13,9 +13,31 @@ struct EmotionListView: View {
 
     var body: some View {
         NavigationView {
-            List(emotions) { emotion in
-                NavigationLink(destination: EmotionDetailView(emotion: emotion)) {
+            /*List(emotions) { emotion in
+                NavigationLink(destination: EmotionDetailView(
+                    emotion: emotion,
+                    onDelete: {
+                        reloadEmotions()
+                    }
+                )) {
                     EmotionRowView(emotion: emotion)
+                }
+            }*/
+            List {
+                ForEach(emotions) { emotion in
+                    NavigationLink(destination: EmotionDetailView(
+                        emotion: emotion,
+                        onDelete: { reloadEmotions() }
+                    )) {
+                        EmotionRowView(emotion: emotion)
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button(role: .destructive) {
+                            deleteEmotion(emotion)
+                        } label: {
+                            Label("Supprimer", systemImage: "trash")
+                        }
+                    }
                 }
             }
             .navigationTitle("Mes émotions")
@@ -46,6 +68,19 @@ struct EmotionListView: View {
                     self.emotions = emotions
                 case .failure:
                     print("Erreur récupération émotions")
+                }
+            }
+        }
+    }
+    
+    func deleteEmotion(_ emotion: Emotion) {
+        APIService.shared.deleteEmotion(id: emotion.id, token: session.token ?? "") { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success:
+                    reloadEmotions()
+                case .failure:
+                    print("Erreur lors de la suppression de l’émotion")
                 }
             }
         }
